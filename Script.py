@@ -1,6 +1,7 @@
 class script(object):
     START_TXT = """Hello👋 {},
-/nI Am Reshmika..🙃 A Highly Advanced Bot With Lots Of Amazing Tools..!🤠 I Can Provide Movies, Just Add Me To Your Group And Enjoy..😎"""
+
+I Am Reshmika..🙃 A Highly Advanced Bot With Lots Of Amazing Tools..!🤠 I Can Provide Movies, Just Add Me To Your Group And Enjoy..😎"""
 
     HELP_TXT ="""<b>𝖧𝖾𝗋𝖾 𝗂𝗌 𝗍𝗁𝖾 𝖴𝗌𝗎𝖺𝗅 𝖼𝗈𝗆𝗆𝖺𝗇𝖽𝗌</b>: 
 /start - 𝖼𝗁𝖾𝖼𝗄 𝗐𝗁𝖾𝗍𝗁𝖾𝗋 𝗂𝗆 𝗈𝗇𝗅𝗂𝗇𝖾 
