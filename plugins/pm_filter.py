@@ -2439,7 +2439,7 @@ async def auto_filter(client, msg, spoll=False):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"🎥[{get_size(file.file_size)}] {file.file_name}", callback_data=f'{pre}#{file.file_id}'
+                    text=f"➠[{get_size(file.file_size)}] {file.file_name}", callback_data=f'{pre}#{file.file_id}'
                 ),
             ]
             for file in files
@@ -2448,11 +2448,11 @@ async def auto_filter(client, msg, spoll=False):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"🎥{file.file_name}",
+                    text=f"➠{file.file_name}",
                     callback_data=f'{pre}#{file.file_id}',
                 ),
                 InlineKeyboardButton(
-                    text=f"🎥{get_size(file.file_size)}",
+                    text=f"➠{get_size(file.file_size)}",
                     callback_data=f'{pre}_#{file.file_id}',
                 ),
             ]
@@ -2464,18 +2464,18 @@ async def auto_filter(client, msg, spoll=False):
         BUTTONS[key] = search
         req = message.from_user.id if message.from_user else 0
         btn.append(
-            [InlineKeyboardButton(text=f"💠 1/{round(int(total_results) / 10)}", callback_data="pages"),
-             InlineKeyboardButton(text="ɴᴇxᴛ 🛡️", callback_data=f"next_{req}_{key}_{offset}")]
+            [InlineKeyboardButton(text=f"📄 1/{round(int(total_results) / 10)}", callback_data="pages"),
+             InlineKeyboardButton(text="ɴᴇxᴛ ➡️", callback_data=f"next_{req}_{key}_{offset}")]
         )
         btn.insert(0,
-            [InlineKeyboardButton(text="🎀 ᴊᴏɪɴ ᴏᴜʀ ᴄᴀɴɴᴇʟ 🎀",url="https://t.me/Justaupdatechannel")]
+            [InlineKeyboardButton(text="🎀 ᴊᴏɪɴ ᴏᴜʀ ᴄᴀɴɴᴇʟ 🎀",url=" ")]
         )
     else:
         btn.append(
-            [InlineKeyboardButton(text="💠 1/1", callback_data="pages")]
+            [InlineKeyboardButton(text="📄 1/1", callback_data="pages")]
         )
         btn.insert(0,
-            [InlineKeyboardButton(text="🎀 ᴊᴏɪɴ ᴏᴜʀ ᴄʜᴀɴɴᴇʟ 🎀",url="https://t.me/JUSTAUPDATECHANNEL")]
+            [InlineKeyboardButton(text="🎀 ᴊᴏɪɴ ᴏᴜʀ ᴄʜᴀɴɴᴇʟ 🎀",url=" ")]
         )
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
     TEMPLATE = settings['template']
@@ -2514,7 +2514,7 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"<b>Hᴇʏ😚 {message.from_user.mention}</b>👋🏻\n<b>🔍 ʜᴇʀᴇ ɪs ʏᴏᴜʀ ǫᴜᴇʀʏ ʀᴇsᴜʟᴛ</b>: <code>{search}</code>\n<b>© Pᴏᴡᴇʀᴇᴅ ʙʏ </b>: <b><a href=https://t.me/MovieHubOfficialGroup>{message.chat.title}</a></b>\nㅤㅤㅤㅤ\n<b><u> Tʜɪs ᴍᴇssᴀɢᴇ ᴡᴀs ᴀᴜᴛᴏ ᴅᴇʟᴇᴛᴇᴅ ᴀғᴛᴇʀ 15 ᴍɪɴᴜᴛᴇs . Tᴏ ᴀᴠᴏɪᴅ ᴄᴏᴘʏʀɪɢʜᴛ ɪssᴜᴇs.</b></u>"
+        cap = f"<b>Hᴇʏ😚 {message.from_user.mention}</b>👋🏻\n<b>🔍 ʜᴇʀᴇ ɪs ʏᴏᴜʀ ǫᴜᴇʀʏ ʀᴇsᴜʟᴛ</b>: <code>{search}</code>\n<b>© Pᴏᴡᴇʀᴇᴅ ʙʏ </b>: <b><a href=https://t.me/+1CZ0RvqgItEzZTQ1>{message.chat.title}</a></b>\nㅤㅤㅤㅤ\n<b><u> Tʜɪs ᴍᴇssᴀɢᴇ ᴡᴀs ᴀᴜᴛᴏ ᴅᴇʟᴇᴛᴇᴅ ᴀғᴛᴇʀ 15 ᴍɪɴᴜᴛᴇs . Tᴏ ᴀᴠᴏɪᴅ ᴄᴏᴘʏʀɪɢʜᴛ ɪssᴜᴇs.</b></u>"
     if imdb and imdb.get('poster'):
         try:
             hehe = await message.reply_photo(photo=imdb.get('poster'), caption=cap, reply_markup=InlineKeyboardMarkup(btn))
